@@ -3,11 +3,11 @@ import * as Bluebird from 'bluebird';
 
 function getConfiguration(): ConnectionConfig {
   return {
-    host: '${YOUR_DATABASE_HOST}',
-    user: '${YOUR_DATABASE_USERNAME}',
-    password: '${YOUR_DATABASE_PASSWORD}',
-    database: '${YOUR_DATABASE_NAME}',
-    port: 13306,
+    host: 'localhost',
+    user: 'root',
+    password: 'root',
+    database: 'tw',
+    port: 3306,
   };
 }
 
