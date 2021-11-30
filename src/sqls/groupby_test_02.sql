@@ -8,3 +8,8 @@
  *
  * 输出应当根据 `status` 进行排序。
  */
+SELECT status, SUM(d.quantityOrdered * d.priceEach) as totalPrice
+FROM orders o, orderdetails d
+WHERE o.orderNumber = d.orderNumber 
+GROUP BY status
+ORDER BY status
