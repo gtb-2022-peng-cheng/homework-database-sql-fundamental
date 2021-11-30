@@ -6,3 +6,7 @@
  * | lastName  | firstName  | jobTitle  |
  * +───────────+────────────+───────────+
  */
+SELECT lastName, firstName, jobTitle
+FROM employees
+WHERE officeCode = "1"
+	AND jobTitle = "Sales Rep"

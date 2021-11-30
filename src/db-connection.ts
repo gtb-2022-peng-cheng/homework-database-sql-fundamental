@@ -4,9 +4,9 @@ import * as Bluebird from 'bluebird';
 function getConfiguration(): ConnectionConfig {
   return {
     host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'tw',
+    user: 'gtb-2022-peng-cheng',
+    password: 'p@ssword',
+    database: 'classicmodel-gtb-2022-peng-cheng',
     port: 3306,
   };
 }
