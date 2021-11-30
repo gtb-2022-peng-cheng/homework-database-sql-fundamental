@@ -8,3 +8,7 @@
  *
  * 结果应当首先按照 country 排序，再按照 city 排序。
  */
+SELECT DISTINCT country, city FROM customers
+WHERE country = "France"
+	OR country = "UK"
+ORDER BY country, city
