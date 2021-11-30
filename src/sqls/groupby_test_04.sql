@@ -7,3 +7,12 @@
  *
  * 其结果应当以 `orderNumber` 排序。
  */
+SELECT t.orderNumber, t.totalPrice
+FROM (
+	SELECT o.orderNumber, SUM(d.quantityOrdered * d.priceEach) AS totalPrice
+	FROM orders o, orderdetails d
+	WHERE o.orderNumber = d.orderNumber
+	GROUP BY o.orderNumber
+) AS t
+WHERE t.totalPrice > 60000
+ORDER BY t.orderNumber ;
