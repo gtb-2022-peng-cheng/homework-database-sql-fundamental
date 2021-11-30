@@ -5,3 +5,9 @@
  * | employeeNumber  | firstName  | lastName  |
  * +─────────────────+────────────+───────────+
  */
+SELECT employeeNumber, firstName, lastName 
+FROM employees
+WHERE  employeeNumber IN (
+	SELECT MAX(employeeNumber)
+	FROM employees
+)
