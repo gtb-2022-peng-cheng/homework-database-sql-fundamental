@@ -10,3 +10,14 @@
  *
  * 结果应当按照 `orderNumber` 排序。
  */
+SELECT orderNumber, totalPrice, detailsCount
+FROM (
+	SELECT o.orderNumber,
+		SUM(d.quantityOrdered * d.priceEach) AS totalPrice,
+		COUNT(*) AS detailsCount
+	FROM orders o, orderdetails d
+	WHERE o.orderNumber = d.orderNumber
+		AND o.status = "Cancelled"
+	GROUP BY d.orderNumber
+) as t
+ORDER BY orderNumber;
