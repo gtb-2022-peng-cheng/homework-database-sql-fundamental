@@ -9,3 +9,9 @@
  * 
  * 结果应当按照 `orderNumber` 排序。
  */
+SELECT orderNumber, productName, MSRP, priceEach
+FROM orderdetails o, products p
+WHERE o.productCode = p.productCode
+	AND o.productCode = "S10_1678"
+	AND o.priceEach < p.MSRP
+ORDER BY orderNumber 
