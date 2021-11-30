@@ -8,3 +8,9 @@
  *
  * 查询结果请按照 `customerNumber` 排序。
  */
+SELECT c.customerNumber, COUNT(o.orderNumber) AS totalOrders
+FROM customers c 
+LEFT JOIN orders o ON c.customerNumber = o.customerNumber 
+WHERE c.customerNumber < 150
+GROUP BY c.customerNumber
+ORDER BY c.customerNumber 
