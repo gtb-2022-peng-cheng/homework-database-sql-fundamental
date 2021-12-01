@@ -7,3 +7,10 @@
  *
  * 结果应当按照 `customerNumber` 排序。
  */
+SELECT customerNumber, customerName
+FROM customers
+WHERE customerNumber NOT IN (
+	SELECT DISTINCT customerNumber 
+	FROM orders o 
+)
+ORDER BY customerNumber 
