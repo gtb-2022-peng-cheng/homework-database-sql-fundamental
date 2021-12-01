@@ -5,3 +5,11 @@
  * | minOrderItemCount  | maxOrderItemCount  | avgOrderItemCount  |
  * +────────────────────+────────────────────+────────────────────+
  */
+SELECT MIN(orders) AS minOrderItemCount,
+	MAX(orders) AS maxOrderItemCount,
+	ROUND(AVG(orders)) AS avgOrderItemCount 
+FROM (
+	SELECT COUNT(orderNumber) as orders
+	FROM orderdetails
+	GROUP BY orderNumber 
+) AS t
