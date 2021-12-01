@@ -8,3 +8,9 @@
  *
  * 输出结果按照 `manager` 排序，然后按照 `employee` 排序。
  */
+SELECT CONCAT(e1.lastName, ", ", e1.firstName) AS employee,
+	CONCAT(e2.lastName , ", ", e2.firstName) AS manager
+FROM employees e1, employees e2
+WHERE e1.reportsTo != "" 
+    AND e1.reportsTo = e2.employeeNumber 
+ORDER BY manager, employee
